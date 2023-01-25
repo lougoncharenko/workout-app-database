@@ -47,8 +47,13 @@ CREATE TABLE Exercises (
     id int NOT NULL AUTO_INCREMENT, 
     name varchar(100) NOT NULL,
     video varchar(100) NOT NULL,
+    exerscise_type varchar(100) NOT NULL
     PRIMARY KEY (id)
 );
+
+ALTER TABLE Exercises 
+ADD exerscise_type varchar(100) NOT NULL;
+
 
 -- Insert into CLIENTS
 INSERT INTO Clients 
@@ -66,6 +71,20 @@ VALUES
 ('Dwayne Johnseen', '1996-01-01', '8234 Angel street  WA USA', 220.3, 6.2); 
 
 -- Insert into GOALS
+INSERT INTO Goals 
+(client_id, goal_type,  time_frame)
+VALUES 
+(1, 'lose weight', '6 months'),
+(2, 'lose weight', '1 year'),
+(3, 'lose weight', '1 year'),
+(4, 'build muscle', '2 years'),
+(5, 'lose weight and build muscle', '1 year'),
+(6, 'lose weight', '1 year'),
+(7, 'lose weight', '1 year'),
+(8, 'lose weight', '1 year'),
+(9, 'lose weight and build muscle', '1.5 years'),
+(10, 'build muscle', '1 years');
+
 -- Insert into WORKOUT_PLAN
 -- Insert into EXERCISES
 -- Insert into WORKOUT_PLAN_EXERCISES
