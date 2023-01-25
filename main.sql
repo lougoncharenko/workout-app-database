@@ -326,3 +326,24 @@ VALUES
 (11, 10, 5, 5),
 (7, 10, 5, 5),
 (3, 10, 5, 5);
+
+-- Query 1 Description: Select all the customer’s whose goal is to lose weight
+SELECT Clients.full_name 
+FROM Clients
+JOIN Goals
+ON Clients.id = Goals.client_id
+WHERE Goals.goal_type LIKE '%lose weight%';
+
+-- Query 2 Description: Find all the exercises on Taylor Swept’s workout plan
+
+SELECT Exercises.name FROM Exercises
+JOIN Workout_Plan_Exerscise
+ON Exercises.id = Workout_Plan_Exerscise.exercise_id
+JOIN Workout_Plan
+ON Workout_Plan.id = Workout_Plan_Exerscise.Workout_plan_id
+JOIN Clients
+ON Clients.id = Workout_Plan.client_id
+WHERE Clients.full_name = 'Taylor Swept';
+
+
+-- Query 3
