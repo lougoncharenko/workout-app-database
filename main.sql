@@ -13,6 +13,14 @@ CREATE TABLE Clients (
 );
 
 -- Create table for Goals
+CREATE TABLE Goals (
+    id int NOT NULL AUTO_INCREMENT,
+    client_id int NOT NULL,
+    goal_type varchar(100) NOT NULL,
+    time_frame varchar(100) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (client_id) REFERENCES Clients(id)
+);
 -- Create table for Workout plans
 -- Create table for Workout plan exerscises
 -- Create table for Exerscises
