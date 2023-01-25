@@ -47,12 +47,10 @@ CREATE TABLE Exercises (
     id int NOT NULL AUTO_INCREMENT, 
     name varchar(100) NOT NULL,
     video varchar(100) NOT NULL,
-    exerscise_type varchar(100) NOT NULL
+    exerscise_type varchar(100) NOT NULL,
+    muscle_group varchar(100) NOT NULL;
     PRIMARY KEY (id)
 );
-
-ALTER TABLE Exercises 
-ADD exerscise_type varchar(100) NOT NULL;
 
 
 -- Insert into CLIENTS
@@ -101,5 +99,69 @@ VALUES
 (10, '6 months', 'bro split', 7);
 
 -- Insert into EXERCISES
+INSERT INTO Exercises 
+(name, video, exerscise_type, muscle_group)
+VALUES
+('Barbell Squat', 'barbellsquat.mov', 'strength training', 'legs'),
+('Barbell Front Squat', 'frontsquat.mov', 'strength training', 'legs'),
+('Barbell Zercher Squat', 'zerchersquat.mov', 'strength training', 'legs'),
+('Dumbell Goblet Squat', 'dumbellgobletsquat.mov', 'strength training', 'legs'),
+('Bulgarian Split Squat', 'bulgariansplitsquat.mov', 'strength training', 'legs'),
+('Barbell Lunges', 'barbelllunges.mov', 'strength training', 'legs'),
+('Dumbell Lunges', 'dumbelllunges.mov', 'strength training', 'legs'),
+('Side Lunge', 'sidelunge.mov', 'strength training', 'legs'),
+('Bulgarian Split Squat', 'bulgariansplitsquat.mov', 'strength training', 'legs'),
+('Leg press', 'legpress.mov', 'strength training', 'legs'),
+('Quad Extension', 'quadextension.mov', 'strength training', 'legs'),
+('Calf raises', 'calfraises.mov', 'strength training', 'legs'),
+('barbell hip thrust', 'barbellhipthrust.mov', 'strength training', 'legs/glutes'),
+('conventional deadlift', 'conventionaldeadlift.mov', 'strength training', 'legs/glutes/back'),
+('sumo deadlift', 'sumodeadlift.mov', 'strength training', 'legs/glutes/back'),
+('hamstring curl', 'hamstringcurl.mov', 'strength training', 'legs/hamstrings'),
+('nordic curl', 'nordiccurl.mov', 'strength training', 'legs/hamstrings'),
+('hack squat', 'hacksquat.mov', 'strength training', 'legs'),
+('barbell good mornings', 'goodmornings.mov', 'strength training', 'legs/glutes'),
+('barbell row', 'barbellrow.mov', 'strength training', 'back'),
+('T-bar row', 'tbarrow.mov', 'strength training', 'back'),
+('Dumbell Row', 'dumbellrow.mov', 'strength training', 'back'),
+('Cable row', 'cablerow.mov', 'strength training', 'back'),
+('barbell row', 'barbellrow.mov', 'strength training', 'back'),
+('Pull ups', 'pullups.mov', 'calisthenics', 'back/biceps'),
+('Pull-down', 'pulldown.mov', 'strength training', 'back'),
+('back extension', 'backextension.mov', 'strength training', 'back'),
+('Pendalay row', 'pendalayrow.mov', 'strength training', 'back'),
+('Landmine row', 'landminerow.mov', 'strength training', 'back'),
+('Rack pulls', 'rackpulls.mov', 'strength training', 'back'),
+('Preacher curls', 'preachercurls.mov', 'strength training', 'biceps'),
+('Dumbell curls', 'dumbellcurls.mov', 'strength training', 'biceps'),
+('Cable curls', 'cablecurls.mov', 'strength training', 'biceps'),
+('Hammer curls', 'hammercurls.mov', 'strength training', 'biceps'),
+('Skull crushers', 'skullcrushers.mov', 'strength training', 'triceps'),
+('Tricep Extensions', 'tricepextensions.mov', 'strength training', 'triceps'),
+('Tricep Cable Extensions', 'tricepcableextensions.mov', 'strength training', 'triceps'),
+('Tricep Kickbacks', 'tricepkickbacks.mov', 'strength training', 'triceps'),
+('Dips', 'dips.mov', 'calisthenics', 'triceps'),
+('Push ups', 'pushups.mov', 'calisthenics', 'triceps/chest'),
+('Barbell flat press', 'barbellflatpress.mov', 'strength training', 'chest'),
+('Dumbell flat press', 'dumbellflatpress.mov', 'strength training', 'chest'),
+('Barbell incline press', 'barbellinclinepress.mov', 'strength training', 'chest'),
+('Dumbell incline press', 'dumbellinclinepress.mov', 'strength training', 'chest'),
+('Barbell flat press', 'barbellflatpress.mov', 'strength training', 'chest'),
+('Dumbell flyes', 'dumbellflyes.mov', 'strength training', 'chest'),
+('Barbell flat press', 'barbellflatpress.mov', 'strength training', 'chest'),
+('cable press', 'cablepress.mov', 'strength training', 'chest'),
+('Reverse fly', 'barbellrow.mov', 'strength training', 'shoulders'),
+('Barbell flat press', 'barbellflatpress.mov', 'strength training', 'chest'),
+('Military press', 'militarypress.mov', 'strength training', 'shoulders'),
+('Dumbell shoulder press', 'dumbellshoulderpress.mov', 'strength training', 'shoulders'),
+('Side lateral raise', 'sidelateralraise.mov', 'strength training', 'shoulders'),
+('Arnold Press', 'arnoldpress.mov', 'strength training', 'shoulders'),
+('Front raise', 'frontraise.mov', 'strength training', 'shoulders'),
+('Y raise', 'yraise.mov', 'strength training', 'shoulders'),
+('Face pulls', 'facepulls.mov', 'strength training', 'shoulders');
+
 
 -- Insert into WORKOUT_PLAN_EXERCISES
+INSERT INTO Exercises 
+()
+VALUES
