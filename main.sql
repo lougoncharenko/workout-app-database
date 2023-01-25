@@ -86,5 +86,20 @@ VALUES
 (10, 'build muscle', '1 years');
 
 -- Insert into WORKOUT_PLAN
+INSERT INTO Workout_Plan
+(client_id, duration, workout_split, sessions_per_week )
+VALUES
+(1, '6 months', 'full body', 5),
+(2, '6 months', 'push pull legs', 6),
+(3, '6 months', 'push pull legs full body', 4),
+(4, '6 months', 'upper-body lower-body', 6),
+(5, '6 months', 'bro split', 5),
+(6, '6 months', 'push pull legs', 3),
+(7, '6 months', 'push pull legs', 3),
+(8, '6 months', 'push pull legs', 3),
+(9, '6 months', 'push pull legs cardio', 7),
+(10, '6 months', 'bro split', 7);
+
 -- Insert into EXERCISES
+
 -- Insert into WORKOUT_PLAN_EXERCISES
