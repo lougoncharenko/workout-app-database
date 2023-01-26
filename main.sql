@@ -347,3 +347,16 @@ WHERE Clients.full_name = 'Taylor Swept';
 
 
 -- Query 3
+SELECT Exercises.name, COUNT(Workout_Plan_Exerscise.exercise_id) AS 'Total' 
+FROM Exercises
+JOIN Workout_Plan_Exerscise
+ON Exercises.id = Workout_Plan_Exerscise.exercise_id
+GROUP BY Exercises.name
+ORDER BY Total DESC;
+
+-- Query 4
+SELECT Exercises.id, Exercises.name, Exercises.muscle_group FROM Exercises
+LEFT JOIN Workout_Plan_Exerscise
+ON Exercises.id = Workout_Plan_Exerscise.exercise_id
+WHERE Workout_Plan_Exerscise.Workout_plan_id is NULL;
+
