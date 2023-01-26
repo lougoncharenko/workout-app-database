@@ -360,3 +360,11 @@ LEFT JOIN Workout_Plan_Exerscise
 ON Exercises.id = Workout_Plan_Exerscise.exercise_id
 WHERE Workout_Plan_Exerscise.Workout_plan_id is NULL;
 
+SELECT height, cast(height) AS Integer, height - cast(height) AS Decimal
+FROM Clients
+
+SELECT full_name, height , weight,
+(FLOOR(height)*12) + ((height-FLOOR(height))*10) AS Height_in_Inches,
+ROUND((((weight/POWER((FLOOR(height)*12) + ((height-FLOOR(height))*10),2)))*703), 2) AS BMI
+ FROM Clients
+ ORDER BY BMI DESC;
