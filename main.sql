@@ -363,8 +363,47 @@ WHERE Workout_Plan_Exerscise.Workout_plan_id is NULL;
 SELECT height, cast(height) AS Integer, height - cast(height) AS Decimal
 FROM Clients
 
+-- query 5
 SELECT full_name, height , weight,
 (FLOOR(height)*12) + ((height-FLOOR(height))*10) AS Height_in_Inches,
 ROUND((((weight/POWER((FLOOR(height)*12) + ((height-FLOOR(height))*10),2)))*703), 2) AS BMI
  FROM Clients
  ORDER BY BMI DESC;
+
+SELECT Clients.full_name AS Name, COUNT(Exercises.name) AS 'Total Exercises'
+FROM Exercises
+JOIN Workout_Plan_Exerscise
+ON Exercises.id = Workout_Plan_Exerscise.exercise_id
+JOIN Workout_Plan
+ON Workout_Plan.id = Workout_Plan_Exerscise.Workout_plan_id
+JOIN Clients
+ON Clients.id = Workout_Plan.client_id
+GROUP BY Clients.full_name
+ORDER BY COUNT(Exercises.name) DESC
+LIMIT 3
+OFFSET 5;
+
+SELECT Clients.full_name, 
+Goals.goal_type, 
+Workout_Plan.workout_split, 
+Workout_Plan.sessions_per_week
+FROM Clients
+JOIN Workout_Plan ON Clients.id = Workout_Plan.client_id
+JOIN Goals ON Clients.id = Goals.client_id;
+
+SELECT (COUNT(Exercises.name)
+FROM Exercises
+JOIN Workout_Plan_Exerscise
+ON Exercises.id = Workout_Plan_Exerscise.exercise_id;
+
+
+SELECT muscle_group, COUNT(muscle_group) AS 'Exerscises per muscle group'
+FROM Exercises
+GROUP BY muscle_group
+ORDER BY COUNT(muscle_group) DESC;
+
+SELECT Clients.full_name, Workout_Plan.sessions_per_week
+FROM Clients
+JOIN Workout_Plan ON Clients.id = Workout_Plan.client_id
+ORDER BY Workout_Plan.sessions_per_week DESC
+LIMIT 3; 
